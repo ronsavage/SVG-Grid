@@ -1,0 +1,15 @@
+Changelog.ini
+Changes
+data/synopsis.svg
+lib/SVG/Grid.pm
+LICENSE
+Makefile.PL
+MANIFEST
+META.json
+META.yml
+README
+scripts/generate.images.sh
+scripts/pod2html.sh
+scripts/synopsis.pl
+t/test.t
+xt/author/pod.t
