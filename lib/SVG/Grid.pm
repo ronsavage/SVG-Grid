@@ -452,7 +452,7 @@ C<SVG::Grid> - Address SVG images using cells of $n1 x $n2 pixels
 
 This is scripts/synopsis.pl:
 
-	#!/use/bin/env perl
+	#!/usr/bin/env perl
 
 	use strict;
 	use warnings;
