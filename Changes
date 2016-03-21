@@ -1,7 +1,9 @@
 Revision history for Perl extension SVG::Grid.
 
 1.02  2016-03-21T13:44:00
-	- Patch image_link() to return the auto-generated id of the image.
+	- Patch image_link() to return the auto-generated id of the image element. Likewise,
+		rectangle_link() returns the id of the rectangle element and text_link() returns the id
+		of the text element.
 	- Patch t/test.t to clean up the string name of the test.
 
 1.01  2016-02-25T13:53:00

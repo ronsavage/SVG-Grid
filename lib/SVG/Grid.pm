@@ -351,6 +351,7 @@ sub rectangle_link
 {
 	my($self, %options) = @_;
 	my($defaults)		= $self -> _get_defaults(%options);
+	my($rectangle_id)	= "rectangle_$options{x}_$options{y}"; # Try to make it unique.
 
 	$self -> svg -> anchor
 	(
@@ -361,7 +362,7 @@ sub rectangle_link
 	(
 		fill			=> $$defaults{fill},
 		'fill-opacity'	=> $$defaults{fill_opacity} || 0.5, # We use 0.5 since the default is 0.
-		id				=> "rectangle_$options{x}_$options{y}", # Try to make it unique.
+		id				=> $rectangle_id,
 		stroke			=> $$defaults{stroke},
 		'stroke-width'	=> $$defaults{stroke_width},
 		width			=> $self -> cell_width,
@@ -369,6 +370,8 @@ sub rectangle_link
 		x				=> $self -> x_offset + $self -> cell_width * $options{x},
 		y				=> $self -> y_offset + $self -> cell_height * $options{y},
 	);
+
+	return $rectangle_id;
 
 } # End of rectangle_link.
 
@@ -403,6 +406,7 @@ sub text_link
 	my($self, %options)	= @_;
 	my($defaults)		= $self -> _get_defaults(%options);
 	my($half_font)		= int($$defaults{font_size} / 2);
+	my($text_id)		= "text_$options{x}_$options{y}"; # Try to make it unique.
 
 	$self -> svg -> anchor
 	(
@@ -411,7 +415,7 @@ sub text_link
 		target	=> $options{target} || '',
 	) -> text
 	(
-		id		=> "text_$options{x}_$options{y}", # Try to make it unique.
+		id		=> $text_id,
 		x		=> $self -> x_offset + $self -> cell_width * $options{x} + $$defaults{font_size} - $half_font,
 		y		=> $self -> y_offset + $self -> cell_height * $options{y} + $$defaults{font_size} + $half_font,
 		style	=>
@@ -425,6 +429,8 @@ sub text_link
 
 		}
 	) -> cdata($options{text});
+
+	return $text_id;
 
 } # End of text_link.
 
