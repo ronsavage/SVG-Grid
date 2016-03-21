@@ -310,7 +310,8 @@ sub grid
 
 sub image_link
 {
-	my($self, %options) = @_;
+	my($self, %options)	= @_;
+	my($image_id)		= "image_$options{x}_$options{y}"; # Try to make it unique.
 
 	$self -> svg -> anchor
 	(
@@ -320,12 +321,14 @@ sub image_link
 	) -> image
 	(
 		-href	=> $options{image},
-		id		=> "image_$options{x}_$options{y}", # Try to make it unique.
+		id		=> $image_id,
 		width	=> $self -> cell_width,
 		height	=> $self -> cell_height,
 		x		=> $self -> x_offset + $self -> cell_width * $options{x},
 		y		=> $self -> y_offset + $self -> cell_height * $options{y},
 	);
+
+	return $image_id;
 
 } # End of image_link.
 

@@ -104,6 +104,6 @@ my($got)				= read_binary($output_file_name);
 my($input_file_name)	= File::Spec -> catfile('data', 'synopsis.svg');
 my($expected)			= read_binary($input_file_name);
 
-ok($got eq $expected, "$output_file_name matches data/$input_file_name");
+ok($got eq $expected, "$output_file_name matches $input_file_name");
 
 done_testing;
