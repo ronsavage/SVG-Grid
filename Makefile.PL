@@ -30,20 +30,22 @@ my(%params) =
 	PL_FILES  => {},
 	PREREQ_PM =>
 	{
-		'File::Slurper'		=> 0.008,
-		'File::Spec'		=> 0,
-		'File::Temp'		=> 0,
+		'File::Slurper'		=> 0.009,
 		'Getopt::Long'		=> 0,
-		'Moo'				=> 2.000002,
+		'Moo'				=> 2.002004,
 		'Pod::Usage'		=> 0,
 		'strict'			=> 0,
 		'SVG'				=> 2.64,
-		'Test::More'		=> 1.001014,
-		'Test::Stream'		=> 1.302026,
-		'Test::Pod'			=> 1.48,
 		'Types::Standard'	=> 1.000005,
 		'warnings'			=> 0,
 	},
+	TEST_REQUIRES =>
+	{
+		'File::Spec'		=> 0,
+		'File::Temp'		=> 0,
+		'Test::Pod'			=> 1.51,
+		'Test::Simple'		=> 1.302052, # For Test::More.
+	}
 	VERSION_FROM => 'lib/SVG/Grid.pm',
 );
 

@@ -7,7 +7,7 @@ use File::Slurper 'read_binary';
 use File::Spec;
 use File::Temp;
 
-use Test::Stream -V1;
+use Test::More;
 
 use SVG::Grid;
 
