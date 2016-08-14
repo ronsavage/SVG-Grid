@@ -51,7 +51,7 @@ my(%params) =
 
 if ( ($ExtUtils::MakeMaker::VERSION =~ /^\d\.\d\d$/) && ($ExtUtils::MakeMaker::VERSION > 6.30) )
 {
-	$params{LICENSE} = 'artistic_2';
+	$params{LICENSE} = 'perl';
 }
 
 if ($ExtUtils::MakeMaker::VERSION ge '6.46')
@@ -60,17 +60,17 @@ if ($ExtUtils::MakeMaker::VERSION ge '6.46')
 	{
 		'meta-spec' =>
 		{
-		'version' => 2,
+			version => 2,
 		},
-		resources   =>
+		resources =>
 		{
-		'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html?Name=SVG-Grid',
-		'license' => 'http://opensource.org/licenses/Artistic-2.0',
-			repository =>
+			bugtracker	=> 'https://rt.cpan.org/Public/Dist/Display.html?Name=SVG-Grid',
+			license		=> 'http://dev.perl.org/licenses/',
+			repository	=>
 			{
-		'type' => 'git',
-		'url' => 'https://github.com/ronsavage/SVG-Grid.git',
-		'web' => 'https://github.com/ronsavage/SVG-Grid',
+				type	=> 'git',
+				url		=> 'https://github.com/ronsavage/SVG-Grid.git',
+				web		=> 'https://github.com/ronsavage/SVG-Grid',
 			},
 		},
 	};
