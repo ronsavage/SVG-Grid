@@ -8,6 +8,7 @@ Revision history for Perl extension SVG::Grid.
 		http://savage.net.au/Ron/html/My.Workflow.for.Building.Distros.html.
 	- Update .gitignore and MANIFEST.SKIP.
 	- Move File::Spec, File::Temp, Test::Pod and Test::Simple to TEST_REQUIRES.
+	- Change licence from Artistic to Perl.
 
 1.02  2016-03-21T13:44:00
 	- Patch image_link() to return the auto-generated id of the image element. Likewise,
