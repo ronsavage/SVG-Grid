@@ -45,7 +45,7 @@ my(%params) =
 		'File::Temp'		=> 0,
 		'Test::Pod'			=> 1.51,
 		'Test::Simple'		=> 1.302052, # For Test::More.
-	}
+	},
 	VERSION_FROM => 'lib/SVG/Grid.pm',
 );
 
