@@ -26,7 +26,6 @@ my(%params) =
 	},
 	DISTNAME  => 'SVG-Grid',
 	NAME      => 'SVG::Grid',
-	LICENSE   => 'artistic_2',
 	PL_FILES  => {},
 	PREREQ_PM =>
 	{
@@ -64,7 +63,10 @@ if ($ExtUtils::MakeMaker::VERSION ge '6.46')
 		},
 		resources =>
 		{
-			bugtracker	=> 'https://rt.cpan.org/Public/Dist/Display.html?Name=SVG-Grid',
+			bugtracker =>
+			{
+				web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=SVG-Grid',
+			},
 			license		=> 'http://dev.perl.org/licenses/',
 			repository	=>
 			{
