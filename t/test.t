@@ -3,27 +3,23 @@
 use strict;
 use warnings;
 
-use File::Slurper 'read_binary';
+use File::Slurper 'read_text';
 use File::Spec;
 use File::Temp;
 
-use Test::More;
-
 use SVG::Grid;
+
+use Test::More;
 
 # ------------------------------------------------
 
-# The EXLOCK option is for BSD-based systems.
-
-my($temp_dir)			= File::Temp -> newdir('temp.XXXX', CLEANUP => 1, EXLOCK => 0, TMPDIR => 1);
-my($output_file_name)	= File::Spec -> catfile($temp_dir, 'test.svg');
-my($cell_width)			= 40;
-my($cell_height)		= 40;
-my($x_cell_count)		=  3;
-my($y_cell_count)		=  3;
-my($x_offset)			= 40;
-my($y_offset)			= 40;
-my($svg)				= SVG::Grid -> new
+my($cell_width)		= 40;
+my($cell_height)	= 40;
+my($x_cell_count)	=  3;
+my($y_cell_count)	=  3;
+my($x_offset)		= 40;
+my($y_offset)		= 40;
+my($svg)			= SVG::Grid -> new
 (
 	cell_width		=> $cell_width,
 	cell_height		=> $cell_height,
@@ -98,11 +94,22 @@ $svg -> text_link
 	x		=> 3, # Cell co-ord.
 	y		=> 1, # Cell co-ord.
 );
+
+# The EXLOCK option is for BSD-based systems.
+
+my($temp_dir)			= File::Temp -> newdir('temp.XXXX', CLEANUP => 1, EXLOCK => 0, TMPDIR => 1);
+my($output_file_name)	= File::Spec -> catfile($temp_dir, 'test.svg');
+
 $svg -> write(output_file_name => $output_file_name);
 
-my($got)				= read_binary($output_file_name);
+# For this test we have to zap the SVG modules' version #s
+# which are embedded in the 2 files.
+
+my($got)				= read_text($output_file_name);
+$got					= "$1$2" if ($got =~ /(.+)SVG Module V\d\.\d\d(.+)/ms);
 my($input_file_name)	= File::Spec -> catfile('data', 'synopsis.svg');
-my($expected)			= read_binary($input_file_name);
+my($expected)			= read_text($input_file_name);
+$expected				= "$1$2" if ($expected =~ /(.+)SVG Module V\d\.\d\d(.+)/ms);
 
 ok($got eq $expected, "$output_file_name matches $input_file_name");
 
