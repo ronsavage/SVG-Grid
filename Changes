@@ -1,5 +1,11 @@
 Revision history for Perl extension SVG::Grid.
 
+1.04  2017-04-22T11:52:00
+	- Patch t/test.t so that before comparing shipped SVG with generated one, zap within those
+		2 files the versions #s of the SVG modules which created the files. This is necessary
+		because I generated data/synopsis.svg with SVG V 2.64, but any version might be
+		installed on another machine. See #RT212178. Thanx to Slaven Rezic for the report.
+
 1.03  2016-08-14T11:33:00
 	- Stop using Test::Stream. Use Test::More shipped in the Test::Simple distro.
 		See RT#116932. Thanx to Chad Granum.
