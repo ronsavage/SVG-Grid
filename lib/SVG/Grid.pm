@@ -318,7 +318,7 @@ sub image_link
 		id		=> "anchor_$options{x}_$options{y}", # Try to make it unique.
 		-target	=> $options{target} || '',
 	);
-	$anchor_options{-title} = $options{title}	if (length($options{title}) > 0);
+	$anchor_options{-title} = $options{title} if ($options{title} && (length($options{title}) > 0) );
 
 	$self -> svg -> anchor(%anchor_options) -> image
 	(
@@ -359,8 +359,8 @@ sub rectangle_link
 		id		=> "anchor_$options{x}_$options{y}", # Try to make it unique.
 		-target	=> $options{target} || '',
 	);
-	$anchor_options{-title}		= $options{title}	if (length($options{title}) > 0);
-	my($rectangle_id)			= "rectangle_$options{x}_$options{y}"; # Try to make it unique.
+	$anchor_options{-title} = $options{title} if ($options{title} && (length($options{title}) > 0) );
+	my($rectangle_id)		= "rectangle_$options{x}_$options{y}"; # Try to make it unique.
 
 	$self -> svg -> anchor(%anchor_options) -> rectangle
 	(
@@ -416,8 +416,8 @@ sub text_link
 		id		=> "anchor_$options{x}_$options{y}", # Try to make it unique.
 		-target	=> $options{target} || '',
 	);
-	$anchor_options{-title}		= $options{title}	if (length($options{title}) > 0);
-	my($text_id)				= "text_$options{x}_$options{y}"; # Try to make it unique.
+	$anchor_options{-title} = $options{title} if ($options{title} && (length($options{title}) > 0) );
+	my($text_id)			= "text_$options{x}_$options{y}"; # Try to make it unique.
 
 	$self -> svg -> anchor(%anchor_options) -> text
 	(
