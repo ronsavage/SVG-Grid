@@ -1,5 +1,11 @@
 Revision history for Perl extension SVG::Grid.
 
+1.05  2017-08-11T17:10:05
+	- Add title to the hash of options you can pass to image_link(), rectangle_line() and
+		text_link().
+ 	- Encode the output file as UTF-8.
+	- Update various demos to show the usage of title.
+
 1.04  2017-04-22T11:52:00
 	- Patch t/test.t so that before comparing shipped SVG with generated one, zap within those
 		2 files the versions #s of the SVG modules which created the files. This is necessary
