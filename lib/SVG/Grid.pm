@@ -442,7 +442,7 @@ sub write
 	my($self, %options)	= @_;
 	my($file_name)		= $options{output_file_name} || $self -> output_file_name;
 
-	open(my $fh, '>', $file_name);
+	open(my $fh, '>:encoding(UTF-8)', $file_name);
 	print $fh  $self -> svg -> xmlify;
 	close $fh;
 
