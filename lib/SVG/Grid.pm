@@ -317,7 +317,8 @@ sub image_link
 	(
 		-href   => $options{href},
 		id      => "anchor_$options{x}_$options{y}", # Try to make it unique.
-		target	=> $options{target} || '',
+		target	=> $options{target}	|| '',
+		title	=> $options{title}	|| '',
 	) -> image
 	(
 		-href	=> $options{image},
