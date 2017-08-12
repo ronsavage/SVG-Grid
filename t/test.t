@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 
 use strict;
+use utf8;
 use warnings;
 
 use File::Slurper 'read_text';
@@ -102,6 +103,7 @@ $svg -> text_link
 
 my($temp_dir)			= File::Temp -> newdir('temp.XXXX', CLEANUP => 1, EXLOCK => 0, TMPDIR => 1);
 my($output_file_name)	= File::Spec -> catfile($temp_dir, 'test.svg');
+$output_file_name		= '/tmp/test.svg';
 
 $svg -> write(output_file_name => $output_file_name);
 
