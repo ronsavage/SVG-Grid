@@ -16,6 +16,7 @@ use Pod::Usage;
 use strict;
 use SVG;
 use Types::Standard;
+use utf8;
 use warnings;
 
 # ----------------------
@@ -31,6 +32,7 @@ my(@modules) = qw
 	strict
 	SVG
 	Types::Standard
+	utf8
 	warnings
 /;
 
