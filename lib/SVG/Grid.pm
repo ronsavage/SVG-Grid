@@ -459,6 +459,8 @@ sub write
 
 =pod
 
+=encoding utf8
+
 =head1 NAME
 
 C<SVG::Grid> - Address SVG images using cells of $n1 x $n2 pixels
