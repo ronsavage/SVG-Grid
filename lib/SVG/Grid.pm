@@ -1096,7 +1096,7 @@ L<SVG::Grid> was written by Ron Savage I<E<lt>ron@savage.net.auE<gt>> in 2016.
 
 My homepage: L<http://savage.net.au/>
 
-=head1 Copyright
+=head1 Copyright and Licence
 
 Australian copyright (c) 2016, Ron Savage.
 
