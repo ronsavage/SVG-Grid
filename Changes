@@ -1,5 +1,8 @@
 Revision history for Perl extension SVG::Grid.
 
+1.07  2019-09-09T23:59:59
+	- Change heading from Copyright to Copyright and Licence.
+
 1.06  2017-08-15T08:39:00
 	- Patch scripts/generate.images.sh to remove the call to cell.sh. The latter file was deleted
 		some time ago. Thanx to Kevin Mulholland for noticing.
