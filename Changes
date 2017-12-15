@@ -1,5 +1,9 @@
 Revision history for Perl extension SVG::Grid.
 
+1.08  2017-12-15T13:52:00
+	- Replace the $options{target} parameter to image_link() with $options{show}. Likewise for
+		rectangle_link() and text_link(). Fix and expand docs to match.
+
 1.07  2019-09-09T23:59:59
 	- Change heading from Copyright to Copyright and Licence.
 

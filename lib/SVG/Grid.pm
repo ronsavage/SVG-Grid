@@ -103,7 +103,7 @@ has y_offset =>
 	required	=> 0,
 );
 
-our $VERSION = '1.07';
+our $VERSION = '1.08';
 
 # ------------------------------------------------
 
@@ -316,8 +316,7 @@ sub image_link
 	(
 		-href	=> $options{href},
 		id		=> "anchor_$options{x}_$options{y}", # Try to make it unique.
-		-show	=> 'new',
-		-target	=> $options{target} || '',
+		-show	=> $options{show} || 'new',
 	);
 	$anchor_options{-title} = $options{title} if ($options{title} && (length($options{title}) > 0) );
 
@@ -358,7 +357,7 @@ sub rectangle_link
 	(
 		-href	=> $options{href},
 		id		=> "anchor_$options{x}_$options{y}", # Try to make it unique.
-		-target	=> $options{target} || '',
+		-show	=> $options{show} || 'new',
 	);
 	$anchor_options{-title} = $options{title} if ($options{title} && (length($options{title}) > 0) );
 	my($rectangle_id)		= "rectangle_$options{x}_$options{y}"; # Try to make it unique.
@@ -415,7 +414,7 @@ sub text_link
 	(
 		-href	=> $options{href},
 		id		=> "anchor_$options{x}_$options{y}", # Try to make it unique.
-		-target	=> $options{target} || '',
+		-show	=> $options{show} || 'new',
 	);
 	$anchor_options{-title} = $options{title} if ($options{title} && (length($options{title}) > 0) );
 	my($text_id)			= "text_$options{x}_$options{y}"; # Try to make it unique.
@@ -518,7 +517,7 @@ This is scripts/synopsis.pl:
 	(
 		href   => 'http://savage.net.au/Flowers/Chorizema.cordatum.html',
 		image  => 'http://savage.net.au/Flowers/images/Chorizema.cordatum.0.jpg',
-		target => 'new_window',
+		show   => 'new',
 		title  => 'MouseOver® an image',
 		x      => 1, # Cell co-ord.
 		y      => 2, # Cell co-ord.
@@ -526,7 +525,7 @@ This is scripts/synopsis.pl:
 	$svg -> rectangle_link
 	(
 		href   => 'http://savage.net.au/Flowers/Alyogyne.huegelii.html',
-		target => 'new_window',
+		show   => 'new',
 		title  => 'MouseOver™ a rectangle',
 		x      => 2, # Cell co-ord.
 		y      => 3, # Cell co-ord.
@@ -535,7 +534,7 @@ This is scripts/synopsis.pl:
 	(
 		href   => 'http://savage.net.au/Flowers/Aquilegia.McKana.html',
 		stroke => 'rgb(255, 0, 0)',
-		target => 'new_window',
+		show   => 'new',
 		text   => '3,1',
 		title  => 'MouseOvér some text',
 		x      => 3, # Cell co-ord.
@@ -773,14 +772,19 @@ This is the image which appears on the SVG, and which is made clickable. Sample:
 
 image => 'http://savage.net.au/Flowers/images/Chorizema.cordatum.0.jpg'
 
-=item o target => $string
+=item o show => $string
 
-This string, if empty, makes the link (C<href>) open in the current tab. If non-empty, the link
-opens in a new tab. Sample:
+For $string you must choose one of the SVG specification values: embed|new|none|other|replace.
 
-Note: The parameter passed to L<SVG> is actually called C<-target>.
+L<The SVG specification for Behavior Attributes|https://www.w3.org/TR/xlink/#link-behaviors>.
 
-target => 'new_window'
+Note: The parameter passed to L<SVG> is actually called C<-show>.
+
+Default: 'new'
+
+'new' is similar to the effect achieved by the following HTML fragment:
+
+	<A HREF="http://www.example.org" target="_blank">...</A>
 
 =item o title => $string.
 
@@ -836,14 +840,19 @@ href => 'http://savage.net.au/Flowers/Alyogyne.huegelii.html'
 
 Default: 'rgb(105, 105, 105)' aka dimgray.
 
-=item o target => $string
+=item o show => $string
 
-This string, if empty, makes the link (C<href>) open in the current tab. If non-empty, the link
-opens in a new tab. Sample:
+For $string you must choose one of the SVG specification values: embed|new|none|other|replace.
 
-Note: The parameter passed to L<SVG> is actually called C<-target>.
+L<The SVG specification for Behavior Attributes|https://www.w3.org/TR/xlink/#link-behaviors>.
 
-target => 'new_window'
+Note: The parameter passed to L<SVG> is actually called C<-show>.
+
+Default: 'new'
+
+'new' is similar to the effect achieved by the following HTML fragment:
+
+	<A HREF="http://www.example.org" target="_blank">...</A>
 
 =item o title => $string.
 
@@ -954,14 +963,19 @@ Default: 'rgb(105, 105, 105)' aka dimgray.
 
 Default: 1.
 
-=item o target => $string
+=item o show => $string
 
-This string, if empty, makes the link (C<href>) open in the current tab. If non-empty, the link
-opens in a new tab. Sample:
+For $string you must choose one of the SVG specification values: embed|new|none|other|replace.
 
-Note: The parameter passed to L<SVG> is actually called C<-target>.
+L<The SVG specification for Behavior Attributes|https://www.w3.org/TR/xlink/#link-behaviors>.
 
-target => 'new_window'
+Note: The parameter passed to L<SVG> is actually called C<-show>.
+
+Default: 'new'
+
+'new' is similar to the effect achieved by the following HTML fragment:
+
+	<A HREF="http://www.example.org" target="_blank">...</A>
 
 =item o text => $string
 
