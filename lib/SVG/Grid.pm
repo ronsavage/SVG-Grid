@@ -316,6 +316,7 @@ sub image_link
 	(
 		-href	=> $options{href},
 		id		=> "anchor_$options{x}_$options{y}", # Try to make it unique.
+		-show	=> 'new',
 		-target	=> $options{target} || '',
 	);
 	$anchor_options{-title} = $options{title} if ($options{title} && (length($options{title}) > 0) );
